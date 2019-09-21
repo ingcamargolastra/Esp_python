@@ -23,13 +23,24 @@ def menu():
             n = float(input('Ingrese el número: '))
             total = factorial(n)
             print('El factorial de {} es {} '.format(n,total))
+        elif opcion == 3:
+            n = int(input('Ingrese el número: '))
+            if primo(n):
+                print('{} es un numero primo'.format(n))
+            else:
+                print('{} no es un numero primo'.format(n))
             
 def factorial(numero):
     if (numero == 0):
         return 1
     return numero * factorial(numero - 1)
 
-
+def primo(numero):
+    for i in range(2,numero):
+        if (numero%i)==0:
+            return False
+    return True
+    
 
 if __name__ == '__main__':
     menu()
